@@ -2,17 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .bouncewords {
-        @apply
-        text-9xl 
-        text-gray-500 
-        w-1/3 
-        h-1/5 
-        font-mono 
-        text-left 
-        p-10 
-        hover:animate-bounce 
-        py-11
-    }
+.introduction {
+  height: calc(80vh)
+}
+
+.title {
+
+}
+
+.company {
+  font-family: "Space Mono";
+}
+
+.outline {
+  @apply outline-dashed;
+  @apply outline-red-50;
+}
+
+.htmltag {
+  @apply text-cyan-200;
+  @apply text-3xl;
 }

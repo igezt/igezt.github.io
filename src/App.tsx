@@ -1,22 +1,17 @@
 import type { Component } from 'solid-js';
 
-import logo from './logo.svg';
-//import styles from './App.module.css';
-import styles from './index.css'
+import { AppBar } from './components/AppBar';
 import { Introduction } from './components/Introduction';
-import TopBar from './components/TopBar';
-import { Projects } from './components/Projects';
+import { WorkExperience } from './components/WorkExperience';
+import Scrollbars from 'solid-custom-scrollbars';
 
 const App: Component = () => {
   return (
-    <div class='fixed m-0 flex flex-col bg-slate-600 h-screen w-screen overflow-scroll'>
-      <TopBar/>
-      <div class='flex-col bg-slate-600 w-screen'>
-        <Introduction/>
-        <Projects/>
-
-      </div>
-    </div>
+        <div class="bg-gray-900 flex flex-col w-screen scroll-m-0 h-full">
+          <AppBar/>
+          <Introduction/>
+          <WorkExperience/>
+        </div>
   );
 };
 
