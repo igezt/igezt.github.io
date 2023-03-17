@@ -1,5 +1,6 @@
-import { For, createSignal } from "solid-js"
-import { WorkCard } from "./WorkCard"
+import { For, createSignal } from "solid-js";
+import { WorkCard } from "./WorkCard";
+import { Card } from "./Card";
 
 
 export const WorkExperience = () => {
@@ -14,31 +15,67 @@ export const WorkExperience = () => {
             date: "May 2021 - Aug 2021"
         },
         {
+            image:"src/assets/computhink.png",
             title: "Programming Tutor",
             company: "Computhink Kids SG",
-            desc: "Taught coding and programming basics to students." +
-            "Self-leadership observed by leading classes as a tutor.",
+            desc: "Taught coding and programming basics to students.",
             date: "Jan 2023 - Mar 2023"
         },
-        
-    ])
+        {
+            image:"",
+            title: "Coming Soon",
+            company: "Coming Soon",
+            desc: "Coming Soon",
+            date: "Coming Soon"
+        },
+        {
+            image:"",
+            title: "Coming Soon",
+            company: "Coming Soon",
+            desc: "Coming Soon",
+            date: "Coming Soon"
+        }
+    ]);
+
+    const [animate, setAnimate] = createSignal(false);
+
+    const toggleAnimate = (e:any) => {
+        setAnimate(!animate());
+    }
+
+    const setAnimateTrue = (e:any) => {
+        setAnimate(true);
+    }
+
+    const setAnimateFalse = (e:any) => {
+        setAnimate(false);
+    }
 
     return(
         
-        <div class=" h-screen w-full z-3 overflow-hidden flex flex-col px-64">
-            <div class="w-screen h-1/5"/>
+        <div class="h-full w-screen outline flex flex-col">
             
-            <div class="text-cyan-200 text-3xl text-left">
+            <div class="text-cyan-200 text-3xl text-left w-full mx-48 my-24">
                 {"<Work Experience>"}
             </div>
-            <div class="w-screen h-1/5"/>
-
-            <For each={workExperience()}>
-                {
-                (experience, i) => <WorkCard experience={experience} index={i}/>
-                }
-            </For>
         
+
+            <div class="experienceCards z-0 flex flex-row justify-center">
+
+                <div class="cardGroup" onMouseEnter={setAnimateTrue} onMouseLeave={setAnimateFalse}>
+                
+                    <For each={workExperience()}>
+                        {
+                        (experience, i) => <Card experience={experience} index={i} animate={animate}/>
+                        }
+                    </For>
+                    <div class="card">
+                        Work Experience
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
     )
 

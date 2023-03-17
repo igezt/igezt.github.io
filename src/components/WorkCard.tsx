@@ -16,7 +16,7 @@ export const WorkCard = (props: any) => {
     return(
         <div>
             {flip() ? (
-                <div class="flex flex-row">
+                <div class="flex flex-row hidden">
                     <div class="w-52 h-full"/>
                     <div class="w-full h-52 my-10 p-2 rounded-2xl flex flex-row bg-gray-800 border-double border-cyan-500 border">
                         <div class="py-3 px-5">
@@ -38,7 +38,7 @@ export const WorkCard = (props: any) => {
                     </div>
                 </div>
             ) : (
-                <div class="flex flex-row">
+                <div class="flex flex-row hidden">
                     <div class="w-full h-52 my-10 p-2 rounded-2xl flex flex-row bg-gray-800">
                         <img src={img} alt="ncc.png" class="h-48 w-48"/>
                         <div class="py-3 px-5">
